@@ -101,42 +101,35 @@ class ProgressiveManager extends Manager {
     this.title = 'Not a manager';
     this.bonus = 0;
   }
-  notAManager(){
+  updateTitle(){
     if (this.reports = 0){
       return this.title;
-    }
-  };
-  barelyManager(){
-    if (this.reports > 0 && this.reports < 4){
+    } else if (this.reports > 0 && this.reports < 4){
       return this.title = 'Barely Manager';
-    }
-  };
-  mostlyManager(){
-    if (this.reports > 3 && this.reports < 11){
+    } else if (this.reports > 3 && this.reports < 11){
       return this.title = 'Mostly Manager';
-    }
-  };
-  isManager(){
-    if (this.reports > 10 && this.reports < 51){
+    } else if (this.reports > 10 && this.reports < 51){
       return this.title = 'Manager';
-    }
-  };
-  managerPlus(){
-    if (this.reports > 50 && this.reports < 101){
+    } else if (this.reports > 50 && this.reports < 101){
       return this.title = 'Manager Plus';
-    }
-  };
-  bestestManager(){
-    if (this.reports > 100){
+    } else if (this.reports > 100){
       return this.title = 'Bestest Manager';
-    }
-  };
-  ifFire(){
-    if (this.fire() = true){
+    } else if (this.fire() = true){
       return this.bonus += 100;
     }
-  };
 }
+
+  hire(employee){
+    this.reports.push(employee)
+    this.updateTitle ()
+  }
+  fire(index){
+    this.reports.splice(index, 1)
+    this.bonus += 100
+    this.updateTitle ()
+  }
+};
+
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
